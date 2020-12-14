@@ -1,0 +1,34 @@
+select *
+from transactions
+limit 5;
+
+select sum(money_in)
+from transactions;
+
+select sum(money_out)
+from transactions;
+
+select count(money_in)
+from transactions;
+
+select count(money_in)
+from transactions
+where currency = 'BIT';
+
+SELECT MAX(money_in)
+FROM transactions;
+
+SELECT MAX(money_out)
+FROM transactions;
+
+select avg(money_in)
+FROM transactions
+where currency = 'ETH';
+
+select date, avg(money_in), avg(money_out)
+FROM transactions
+group by date;
+
+select date, round(avg(money_in),2), round(avg(money_out),2)
+FROM transactions
+group by date;
